@@ -4,7 +4,7 @@ import Welcome from './Welcome';
 export default function App(props) {
   return (
     <>
-    <Welcome name ="Antonio" />
+    <Welcome name ="Antonio" age={20} />
     </>
   );
 }
