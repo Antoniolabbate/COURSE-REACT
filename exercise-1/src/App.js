@@ -1,16 +1,10 @@
 import Welcome from './Welcome';
-import Age from './Age';
+// import Age from './Age';
 
-export default function App() { 
-  if(Age){return (
+export default function App(props) {
+  return (
     <>
-    <Welcome name ="Antonio"/>
-    <Age age={20}/>
+    <Welcome name ="Antonio" />
     </>
-  )}else{
-    <>
-    <Welcome name ="Antonio"/>
-    </>
-  }
+  );
 }
-
