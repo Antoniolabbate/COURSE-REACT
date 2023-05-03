@@ -1,12 +1,14 @@
-
-
 export default function Welcome(props){
-    return(
-        <>
-        <h1>Hello World!</h1>
-        <p>Welcome, {props.name}!</p>
-        </>
-    );
+    if (props.name === "John") {
+        return (
+            <>
+                <h1>Hello World!</h1>
+                <p>Welcome, {props.name}!</p>
+            </>
+        );
+    } else {
+        return null;
+    }
 }
 
  

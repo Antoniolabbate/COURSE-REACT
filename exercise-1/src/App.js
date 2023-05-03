@@ -4,7 +4,7 @@ import Age from './Age';
 export default function App(props) {
   return (
     <>
-    <Welcome name ="Antonio"/>
+    <Welcome name ="John"/>
     <Age age={20}/>
     </>
   );
