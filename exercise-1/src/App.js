@@ -1,17 +1,14 @@
-import React, { useState, useEffect } from 'react';
-
-function Counter(props) {
-  const [count, setCount] = useState(props.initialCount);
-
-  useEffect(() => {
-    const intervalId = setInterval(() => {
-      setCount(count => count + 1);
-    }, props.interval);
-
-    return () => clearInterval(intervalId);
-  }, [props.interval]);
-
-  return <h1>{count}</h1>;
+import {useState} from 'react';
+export default function App(){
+  const [counter, setCounter] = useState(0);
+  const increase = () => {
+    setCounter(count => count + 1);
+  };
+  return(
+    <>
+    <h1>{counter}</h1>
+    <button onClick={increase}>Increase</button>
+    
+    </>
+  )
 }
-
-export default Counter;
