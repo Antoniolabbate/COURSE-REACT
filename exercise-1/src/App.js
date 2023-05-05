@@ -1,12 +1,16 @@
-import React from 'react';
-import Welcome from './Welcome';
-function App(){
-    return(
-        <>
-        <h1>Hello world!</h1>
-        <Welcome name="John"/>
-        
-        </>
-    );
+import React, { useState, useEffect } from 'react';
+
+function Counter() {
+  const [count, setCount] = useState(0);
+
+  useEffect(() => {
+    const intervalId = setInterval(() => {
+      setCount(count => count + 1);
+    }, 1000);
+    return () => clearInterval(intervalId);
+  }, []);
+
+  return <h1>{count}</h1>;
 }
-export default App;
+
+export default Counter;
