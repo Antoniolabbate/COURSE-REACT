@@ -1,9 +1,10 @@
 import React from 'react';
-import InteractiveWelcome from './InteractiveWelcome';
+// import InteractiveWelcome from './InteractiveWelcome';
+import Login from './Login'
  function App(){
   return(
     <>
-      <InteractiveWelcome/>
+      <Login/>
       </>
   )
  }
