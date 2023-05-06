@@ -23,6 +23,13 @@ function Login({ onLogin }) {
     event.preventDefault();
     onLogin({ username, password });
   }
+  function handleReset(event){
+    event.preventDefault();
+    setPassword("");
+    setUsername("");
+    setIsSubmitDisabled(true);
+    
+  }
 
   return (
     <form>
@@ -36,6 +43,9 @@ function Login({ onLogin }) {
       </label>
       <button type="submit" disabled={isSubmitDisabled} onClick={handleLogin}>
         Login
+      </button>
+      <button onClick={handleReset}>
+        reset
       </button>
     </form>
   );
