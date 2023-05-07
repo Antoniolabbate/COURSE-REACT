@@ -1,4 +1,4 @@
-
+import { useRef, useEffect } from "react";
 
 function UnControlledLogin(){
     function handleLogin(event){
@@ -7,11 +7,17 @@ function UnControlledLogin(){
         const password = event.target.password.value;
         console.log({username, password})
     }
+    function focus(){
+      const focusUsername = useRef(null)
+      useEffect(()=>{
+        focusUsername.current.focus()
+      },[]);
+    }
     return (
         <form onSubmit={handleLogin}> 
           <label>
             Username:
-            <input type="text" name="username"/>
+            <input type="text" name="username" ref={focusUsername}/>
           </label>
           <label>
             Password:
