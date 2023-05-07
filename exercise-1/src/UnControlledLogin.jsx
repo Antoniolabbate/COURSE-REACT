@@ -7,17 +7,12 @@ function UnControlledLogin(){
         const password = event.target.password.value;
         console.log({username, password})
     }
-    function focus(){
-      const focusUsername = useRef(null)
-      useEffect(()=>{
-        focusUsername.current.focus()
-      },[]);
-    }
+  
     return (
         <form onSubmit={handleLogin}> 
           <label>
             Username:
-            <input type="text" name="username" ref={focusUsername}/>
+            <input type="text" name="username" autoFocus/>
           </label>
           <label>
             Password:
