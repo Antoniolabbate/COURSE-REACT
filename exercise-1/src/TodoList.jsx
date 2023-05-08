@@ -28,7 +28,8 @@ function TodoList() {
       <button onClick={() => addTodo(input)}>Add</button>
       <ul>
         {list.map((todo) => (
-          <li key={todo.id}>{todo.todo}</li>
+          <li key={todo.id}>
+            {todo.todo}</li>
         ))}
       </ul>
     </div>
