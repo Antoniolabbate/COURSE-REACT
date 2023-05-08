@@ -19,6 +19,11 @@ function TodoList() {
   const handleInputChange = (event) => {
     setInput(event.target.value);
   };
+  const deleteButton = (id) => {
+    const newList = list.filter((todo) => todo.id !== id);
+    setList(newList)
+
+  }
 
   return (
     <div>
@@ -29,7 +34,9 @@ function TodoList() {
       <ul>
         {list.map((todo) => (
           <li key={todo.id}>
-            {todo.todo}</li>
+            {todo.todo}
+            <button onClick={() => deleteButton(todo.id)}>&times;</button>
+            </li>
         ))}
       </ul>
     </div>
