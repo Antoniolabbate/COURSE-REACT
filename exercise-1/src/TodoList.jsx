@@ -12,6 +12,9 @@ function TodoList() {
     setList([...list, newTodo]);
     setInput(""); // Cancella il contenuto dell'input box dopo l'aggiunta di un nuovo todo
   };
+  const handleReset = () => {
+    setList([]);
+  }
 
   const handleInputChange = (event) => {
     setInput(event.target.value);
@@ -20,6 +23,7 @@ function TodoList() {
   return (
     <div>
       <h1>TodoList</h1>
+      <button onClick={handleReset}>Reset</button>
       <input type="text" value={input} onChange={handleInputChange} />
       <button onClick={() => addTodo(input)}>Add</button>
       <ul>
