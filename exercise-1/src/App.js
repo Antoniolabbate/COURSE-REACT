@@ -1,16 +1,18 @@
-import { useEffect, useState } from "react";
+import Counter from "./Counter";
+import React from "react";
 
-const Counter = ({start, add, ms}) => {
-  const [count, setCount] = useState(start);
 
-  useEffect(() => {
-    const interval = setInterval(() => {
-        setCount(count => count + add);
-    }, ms);
-    return () => clearInterval(interval)
-  }, [])
+class App extends React.Component{
 
-  return <h1>{count}</h1>
-};
-
-export default Counter;
+  render(){
+   
+   return (
+    <>
+    <Counter incrementAmount = {1} incrementIntervall = {1000}/>
+    </>
+   
+   )
+  }
+ 
+}
+export default App;
