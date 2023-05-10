@@ -1,16 +1,16 @@
-import React, { useState, useEffect } from 'react';
+import { useEffect, useState } from "react";
 
-function Counter(props) {
-  const [count, setCount] = useState(props.initialCount);
+const Counter = ({start, add, ms}) => {
+  const [count, setCount] = useState(start);
 
   useEffect(() => {
-    const intervalId = setInterval(() => {
-      setCount(count => count + props.increment);
-    },props.interval);
-    return () => clearInterval(intervalId);
-  }, [props]);
+    const interval = setInterval(() => {
+        setCount(count => count + add);
+    }, ms);
+    return () => clearInterval(interval)
+  }, [])
 
-  return <h1>{count}</h1>;
-}
+  return <h1>{count}</h1>
+};
 
 export default Counter;
