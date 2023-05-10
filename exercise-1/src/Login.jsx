@@ -33,6 +33,7 @@ function Login({ onLogin }) {
 
   return (
     <form>
+       <form onSubmit={handleLogin}>
       <label>
         Username:
         <input type="text" value={username} onChange={handleUsernameChange} />
@@ -41,12 +42,13 @@ function Login({ onLogin }) {
         Password:
         <input type="password" value={password} onChange={handlePasswordChange} />
       </label>
-      <button type="submit" disabled={isSubmitDisabled} onClick={handleLogin}>
+      <button type="submit" disabled={isSubmitDisabled}>
         Login
       </button>
-      <button onClick={handleReset}>
-        reset
+      <button type="button" onClick={handleReset}>
+        Reset
       </button>
+    </form>
     </form>
   );
 }
