@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-function TodoList() {
+function TodoList(props) {
   const [list, setList] = useState([]);
   const [input, setInput] = useState("");
 
@@ -12,6 +12,7 @@ function TodoList() {
     setList([...list, newTodo]);
     setInput(""); // Cancella il contenuto dell'input box dopo l'aggiunta di un nuovo todo
   };
+
   const handleReset = () => {
     setList([]);
   }
@@ -19,11 +20,11 @@ function TodoList() {
   const handleInputChange = (event) => {
     setInput(event.target.value);
   };
-  const deleteButton = (id) => {
-    const newList = list.filter((todo) => todo.id !== id);
-    setList(newList)
 
-  }
+  const deleteTodo = (id) => {
+    const newList = list.filter((todo) => todo.id !== id);
+    setList(newList);
+  };
 
   return (
     <div>
@@ -31,14 +32,10 @@ function TodoList() {
       <button onClick={handleReset}>Reset</button>
       <input type="text" value={input} onChange={handleInputChange} />
       <button onClick={() => addTodo(input)}>Add</button>
-      <ul>
-        {list.map((todo) => (
-          <li key={todo.id}>
-            {todo.todo}
-            <button onClick={() => deleteButton(todo.id)}>&times;</button>
-            </li>
-        ))}
-      </ul>
+      {props.render({
+        list: list,
+        deleteTodo: deleteTodo,
+      })}
     </div>
   );
 }
