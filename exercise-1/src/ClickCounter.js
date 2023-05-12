@@ -29,24 +29,25 @@
 //   )
 // }
 
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect } from "react";
 
-function ClickCounter({ onCounterChange }) {
+const ClickCounter = (props) => {
   const [count, setCount] = useState(0);
 
   useEffect(() => {
-    onCounterChange(count);
-  }, [count, onCounterChange]);
+    props.onCounterChange(count);
+  }, [count, props.onCounterChange]);
 
-  function handleClick() {
+  const clickCounter = () => {
     setCount(count + 1);
-  }
+  };
 
   return (
     <div>
-      <p>You clicked the button {count} times.</p>
-      <button onClick={handleClick}>Click me!</button>
+      <h1>{count}</h1>
+      <button onClick={clickCounter}>Click me</button>
     </div>
   );
-}
+};
+
 export default ClickCounter;

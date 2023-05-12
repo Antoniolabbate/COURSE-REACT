@@ -1,8 +1,6 @@
 
-
-
-import React from 'react';
-import ClickCounter from './ClickCounter';
+import React from "react";
+import ClickCounter from "./ClickCounter";
 
 function App() {
   function handleCounterChange(count) {
