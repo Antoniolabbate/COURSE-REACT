@@ -29,35 +29,35 @@
 //   )
 // }
 
-import React, { useState, useEffect } from "react";
+// import React, { useState, useEffect } from "react";
 
-const ClickCounter = (props) => {
-  const [count, setCount] = useState(0);
+// const ClickCounter = (props) => {
+//   const [count, setCount] = useState(0);
 
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setCount((prevCount) => prevCount + 1);
-    }, 1000);
+//   useEffect(() => {
+//     const interval = setInterval(() => {
+//       setCount((prevCount) => prevCount + 1);
+//     }, 1000);
 
-    return () => {
-      clearInterval(interval);
-    };
-  }, []);
+//     return () => {
+//       clearInterval(interval);
+//     };
+//   }, []);
 
-  useEffect(() => {
-    props.onCounterChange(count);
-  }, [count, props.onCounterChange]);
+//   useEffect(() => {
+//     props.onCounterChange(count);
+//   }, [count, props.onCounterChange]);
 
-  const clickCounter = () => {
-    setCount((prevCount) => prevCount + 1);
-  };
+//   const clickCounter = () => {
+//     setCount((prevCount) => prevCount + 1);
+//   };
 
-  return (
-    <div>
-      <h1>{count}</h1>
-      <button onClick={clickCounter}>Click me</button>
-    </div>
-  );
-};
+//   return (
+//     <div>
+//       <h1>{count}</h1>
+//       <button onClick={clickCounter}>Click me</button>
+//     </div>
+//   );
+// };
 
-export default ClickCounter;
+// export default ClickCounter;
