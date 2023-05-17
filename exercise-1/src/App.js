@@ -3,13 +3,13 @@ import React from "react";
 import ClickCounter from "./ClickCounter";
 
 function App() {
-  function handleCounterChange(count) {
-    console.log(`Counter changed: ${count}`);
-  }
+  // function handleCounterChange(count) {
+  //   console.log(`Counter changed: ${count}`);
+  // }
 
   return (
     <div>
-      <ClickCounter onCounterChange={handleCounterChange} />
+      {/* <ClickCounter onCounterChange={handleCounterChange} /> */}
     </div>
   );
 }
