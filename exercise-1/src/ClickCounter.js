@@ -35,11 +35,21 @@ const ClickCounter = (props) => {
   const [count, setCount] = useState(0);
 
   useEffect(() => {
+    const interval = setInterval(() => {
+      setCount((prevCount) => prevCount + 1);
+    }, 1000);
+
+    return () => {
+      clearInterval(interval);
+    };
+  }, []);
+
+  useEffect(() => {
     props.onCounterChange(count);
   }, [count, props.onCounterChange]);
 
   const clickCounter = () => {
-    setCount(count + 1);
+    setCount((prevCount) => prevCount + 1);
   };
 
   return (
