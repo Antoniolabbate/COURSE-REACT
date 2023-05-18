@@ -1,7 +1,7 @@
-
+import GithubUserList from "./GithubUserList";
 import React from "react";
 // import ClickCounter from "./ClickCounter";
-import GithubUser from "./GithubUser";
+
 
 function App() {
   // function handleCounterChange(count) {
@@ -10,7 +10,7 @@ function App() {
 
   return (
     <div>
-      <GithubUser username="antonio"/>
+      <GithubUserList/>
       {/* <ClickCounter onCounterChange={handleCounterChange} /> */}
     </div>
   );
