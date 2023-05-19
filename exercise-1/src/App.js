@@ -1,23 +1,18 @@
-// import GithubUserList from "./GithubUserList";
 import React from "react";
-import LoginForm from "./LoginForm";
-import GithubUser from "./GithubUser";
-// import Counter from "./Counter";
-// import ClickCounter from "./ClickCounter";
+import CarDetails from './CarDetails'
 
-
-function App() {
-  // function handleCounterChange(count) {
-  //   console.log(`Counter changed: ${count}`);
-  // }
-
-  return (
+const App = () => {
+  const  initialData = {
+    model: 'Tesla',
+    year: '2022',
+    color: 'Red',
+  };
+  return(
     <div>
-      <LoginForm/>
-      {/* <Counter/> */}
-      <GithubUser/>
-      {/* <ClickCounter onCounterChange={handleCounterChange} /> */}
+      <h1>Car Details</h1>
+      <CarDetails initialData={initialData}/>
     </div>
-  );
+  )
 }
+
 export default App;
