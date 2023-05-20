@@ -1,18 +1,14 @@
-import React from "react";
-import { LanguageProvider } from "./LanguageContext";
-import DisplayLanguage from "./DisplayLanguage";
-import LanguageSelector from "./LanguageSelector";
+import Counter from "./Counter";
+
 
 const App = () => {
+
+
   return (
-    <LanguageProvider>
-      <div>
-        <h1>Language</h1>
-        <DisplayLanguage />
-        <LanguageSelector />
-      </div>
-    </LanguageProvider>
-  );
-};
+    <>
+      <Counter/>
+    </>
+  )
+}
 
 export default App;
