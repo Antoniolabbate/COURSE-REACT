@@ -1,20 +1,26 @@
-import FilteredList from "./FilteredList";
+import { Route, Routes, Link} from "react-router-dom"
+import Home from "./pages/Home"
+import Counter from "./pages/Counter"
+
 
 const App = () => {
 
-  const obj = [
-    { name: 'Luca', id: 1, age: 30 },
-    { name: 'Jhon', id: 2, age: 17 },
-    { name: 'Joe', id: 3, age: 16 },
-    { name: 'Liam', id: 4, age: 42 },
-    { name: 'Seth', id: 5, age: 20 },
-  ];
 
   return (
     <>
-      <FilteredList list={obj}/>
-    </>
-  );
-};
+      <nav>
+        <Link style={{marginRight: '20px'}} to={'/'}>Home</Link>
+        <Link to={'/pages/Counter'}>Counter</Link>
+      </nav>
 
-export default App;
+      <Routes>
+        <Route path="/" element={<Home/>}></Route>
+        <Route path="/pages/Counter" element={<Counter/>}></Route>
+      </Routes>
+
+
+    </>
+  )
+}
+
+export default App
