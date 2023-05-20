@@ -1,18 +1,18 @@
 import React from "react";
-import CarDetails from './CarDetails'
+import { LanguageProvider } from "./LanguageContext";
+import DisplayLanguage from "./DisplayLanguage";
+import LanguageSelector from "./LanguageSelector";
 
 const App = () => {
-  const  initialData = {
-    model: 'Tesla',
-    year: '2022',
-    color: 'Red',
-  };
-  return(
-    <div>
-      <h1>Car Details</h1>
-      <CarDetails initialData={initialData}/>
-    </div>
-  )
-}
+  return (
+    <LanguageProvider>
+      <div>
+        <h1>Language</h1>
+        <DisplayLanguage />
+        <LanguageSelector />
+      </div>
+    </LanguageProvider>
+  );
+};
 
 export default App;
