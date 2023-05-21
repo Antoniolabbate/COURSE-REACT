@@ -1,31 +1,29 @@
-import { Route, Routes, Link } from "react-router-dom";
-import ShowGithubUser from "/ShowGithubUser";
-import Home from "./Home";
-import Counter from "./Counter";
-import GithubUser from "/GitHubUser";
+import { Route, Routes, Link} from "react-router-dom"
+import Home from "./Home"
+import About from "./About"
+import Login from "./Login"
+
 
 const App = () => {
+
+
   return (
     <>
-      <nav style={{ display: "flex", gap: "20px" }}>
-        <Link to={"/"}>Home</Link>
-        <Link to={"/Counter"}>Counter</Link>
-        <Link to="/ShowGithubUser/jhon">ShowGithubUser</Link>
-        <Link to={"/GithubUser/Jhon"}>GithubUser</Link>
+      <nav style={{display: 'flex', gap: '20px'}}>
+        <Link to={'/'}>Home</Link>
+        <Link to={'/About'}>About</Link>
+        <Link to={'/Login'}>Login</Link>
       </nav>
 
       <Routes>
-        <Route path="/" element={<Home />}></Route>
-        <Route path="/Counter" element={<Counter />}></Route>
-        <Route
-          path="/ShowGithubUser/:username"
-          element={<ShowGithubUser />}
-        ></Route>
-        <Route path="/GithubUser/:username" element={<GithubUser />}>
-        </Route>
+        <Route path="/" element={<Home/>}></Route>
+        <Route path="/About" element={<About/>}></Route>
+        <Route path="/Login" element={<Login/>}></Route>
       </Routes>
-    </>
-  );
-};
 
-export default App;
+
+    </>
+  )
+}
+
+export default App
