@@ -1,31 +1,22 @@
-import { Route, Routes, Link} from "react-router-dom"
-import Home from "./Home"
-import About from "./About"
-import Login from "./Login"
-import ErrorPage from "./ErrorPage"
+import React from "react";
+import { BrowserRouter as Router, Route, Link } from "react-router-dom";
+import Home from "./Home";
+import GithubUserList from "./GithubUserList";
 
-
-const App = () => {
-
-
+function App() {
   return (
-    <>
-      <nav style={{display: 'flex', gap: '20px'}}>
-        <Link to={'/'}>Home</Link>
-        <Link to={'/About'}>About</Link>
-        <Link to={'/Login'}>Login</Link>
-      </nav>
+    <Router>
+      <div>
+        <nav>
+          <Link to="/">Home</Link>
+          <Link to="/users">GithubUserList</Link>
+        </nav>
 
-      <Routes>
-        <Route path="/" element={<Home/>}></Route>
-        <Route path="/About" element={<About/>}></Route>
-        <Route path="/Login" element={<Login/>}></Route>
-        <Route path="*" element={<ErrorPage/>}></Route>
-      </Routes>
-
-
-    </>
-  )
+        <Route exact path="/" component={Home} />
+        <Route path="/users" component={GithubUserList} />
+      </div>
+    </Router>
+  );
 }
 
-export default App
+export default App;

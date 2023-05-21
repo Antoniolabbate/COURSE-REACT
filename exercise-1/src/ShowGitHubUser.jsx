@@ -6,7 +6,11 @@ const ShowGithubUser = () => {
 
   return (
     <div>
-      <h3>User: {username}</h3>
+      <h2>Github User Details</h2>
+      <p>Username: {username}</p>
+      <p>Name: {user.name}</p>
+      <p>Email: {user.email}</p>
+      <img src={user.avatar} alt="User Avatar" />
     </div>
   );
 };
